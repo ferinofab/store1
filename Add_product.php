@@ -17,6 +17,7 @@
             <input type="text" placeholder="Название" name="name">
             <input type="text" placeholder="Цена" name="price">
             <input type="text" placeholder="Артикул" name="article">
+            <input type="text" placeholder="Колличество" name="amount">
             <input type="submit">
         </form>
     </div>

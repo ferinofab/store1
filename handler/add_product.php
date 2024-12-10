@@ -5,6 +5,8 @@ $pdo = require $_SERVER['DOCUMENT_ROOT'].'/store/store/db.php';
 $name = $_POST['name'];
 $price = $_POST['price'];
 $article = $_POST['article'];
-$pdo->query("insert into product (name, price, article) values ('$name', '$price', '$article')");
+$amount = $_POST['amount'];
+
+$pdo->query("insert into product (name, price, article,amount) values ('$name', '$price', '$article', '$amount')");
 header("Location: /store/store/index.php");
 

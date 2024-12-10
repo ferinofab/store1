@@ -8,9 +8,11 @@ $id =$_POST['id']??null;
 if($id == null){
     $select = $_POST['select'];
     $pdo->query("insert into characteristics (date_time, product_id, amount) values ('$date_time', '$select', '$amount')");
+    $pdo->query("update product set amount = amount + '$amount'");
 
 }else{
     $pdo->query("insert into characteristics (date_time, product_id, amount) values ('$date_time', '$id', '$amount')");
+    $pdo->query("update product set amount = amount + '$amount'");
 
 }
 

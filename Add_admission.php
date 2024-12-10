@@ -30,7 +30,7 @@ $id = $_GET['id_product']??null;
             <input type="submit">
         </form>
     <?php else:?>
-        <form action="/store/store/handler/Add_admission.php" method="post">
+        <form action="/handler/Add_admission.php" method="post">
             <input type="datetime-local" placeholder="Дата и время поставки" name="date_time" id="date">
             <input type="hidden" value="<?=$id?>" name="id">
             <input type="text" placeholder="Колличество" name="amount" id="amount">
