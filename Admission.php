@@ -1,7 +1,7 @@
 <?php
 $pdo = require $_SERVER['DOCUMENT_ROOT'].'/store/store/db.php';
 ///store
-//xcdscdsvdfvkkkkkkkkik
+
 
 $id = $_GET['id'];
 $characteristics = $pdo->query("select characteristics.* from characteristics join product on characteristics.product_id = product.id where product.id = '$id'")->fetchAll(PDO::FETCH_ASSOC);
