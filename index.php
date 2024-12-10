@@ -1,5 +1,5 @@
 <?php
-$pdo = require $_SERVER['DOCUMENT_ROOT'].'/store/store/db.php';
+$pdo = require $_SERVER['DOCUMENT_ROOT'].'/db.php';
 ///store
 
 $products = $pdo->query("SELECT DISTINCT product.*  FROM product  JOIN characteristics");
