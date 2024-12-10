@@ -83,6 +83,7 @@ $products = $pdo->query("SELECT DISTINCT product.*  FROM product  JOIN character
             <div class="card">
                     <p class="title"><?=$product['name']?></p>
                    <div class="about">
+                       <p>Колличество - <?=$product['ammount_product']?></p>
                        <p>Цена - <?=$product['price']?></p>
                        <p>Артикул - <?=$product['article']?></p>
                    </div>
