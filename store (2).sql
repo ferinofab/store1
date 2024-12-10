@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: MySQL-8.2
--- Время создания: Дек 10 2024 г., 12:49
+-- Время создания: Дек 10 2024 г., 13:37
 -- Версия сервера: 8.2.0
 -- Версия PHP: 8.3.6
 
@@ -39,11 +39,14 @@ CREATE TABLE `characteristics` (
 --
 
 INSERT INTO `characteristics` (`id`, `date_time`, `product_id`, `amount`) VALUES
-(1, '2024-12-12 13:06:13', 1, 30),
-(3, '2024-12-13 00:00:00', 2, 10000),
-(5, '2024-12-09 00:57:00', 1, 20),
-(6, '2024-12-12 02:03:00', 4, 100),
-(7, '2024-12-12 02:04:00', 2, 300);
+(13, '2024-12-10 17:35:00', 4, 100),
+(14, '2024-12-07 18:39:00', 4, 2),
+(15, '2024-12-07 18:39:00', 4, 2),
+(16, '2024-12-10 18:40:00', 1, 1),
+(17, '2024-12-10 18:41:00', 2, 1000),
+(18, '2024-12-10 17:40:00', 2, 11111),
+(19, '2024-12-10 17:40:00', 2, 11111),
+(20, '2024-12-21 19:43:00', 2, 1);
 
 -- --------------------------------------------------------
 
@@ -55,17 +58,18 @@ CREATE TABLE `product` (
   `id` int NOT NULL,
   `name` varchar(255) DEFAULT NULL,
   `price` int DEFAULT NULL,
-  `article` varchar(255) DEFAULT NULL
+  `article` varchar(255) DEFAULT NULL,
+  `ammount_product` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Дамп данных таблицы `product`
 --
 
-INSERT INTO `product` (`id`, `name`, `price`, `article`) VALUES
-(1, 'apple', 30, '001'),
-(2, 'banana', 40, '002'),
-(4, 'potato', 10, '003');
+INSERT INTO `product` (`id`, `name`, `price`, `article`, `ammount_product`) VALUES
+(1, 'apple', 30, '001', 2),
+(2, 'banana', 40, '002', 23224),
+(4, 'potato', 10, '003', 5);
 
 --
 -- Индексы сохранённых таблиц
@@ -91,7 +95,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT для таблицы `characteristics`
 --
 ALTER TABLE `characteristics`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT для таблицы `product`
