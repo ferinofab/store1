@@ -1,5 +1,5 @@
 <?php
-$pdo = require $_SERVER['DOCUMENT_ROOT'].'/store/store/db.php';
+$pdo = require $_SERVER['DOCUMENT_ROOT'].'/store1/db.php';
 
 $id = $_GET['id'];
 $pdo->query("delete from characteristics where id='$id'");

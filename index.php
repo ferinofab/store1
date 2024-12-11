@@ -1,5 +1,5 @@
 <?php
-$pdo = require $_SERVER['DOCUMENT_ROOT'].'/db.php';
+$pdo = require $_SERVER['DOCUMENT_ROOT'].'/store1/db.php';
 ///store
 
 $products = $pdo->query("SELECT DISTINCT product.*  FROM product  JOIN characteristics");
@@ -74,8 +74,8 @@ $products = $pdo->query("SELECT DISTINCT product.*  FROM product  JOIN character
 <div class="container">
     <h1>Каталог товаров</h1>
     <div class="nav">
-        <a href="Add_product.php">Добавить товар</a>
-        <a href="Add_admission.php"> Добавить информацию о поступлении товара</a>
+        <a href="Add_product.php" id="product">Добавить товар</a>
+        <a href="Add_admission.php" id="admission"> Добавить информацию о поступлении товара</a>
     </div>
     <div class="content">
         <div class="cards">

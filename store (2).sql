@@ -32,7 +32,7 @@ CREATE TABLE `characteristics` (
   `date_time` datetime DEFAULT NULL,
   `product_id` int DEFAULT NULL,
   `amount` int DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Дамп данных таблицы `characteristics`
@@ -60,7 +60,7 @@ CREATE TABLE `product` (
   `price` int DEFAULT NULL,
   `article` varchar(255) DEFAULT NULL,
   `ammount_product` int DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Дамп данных таблицы `product`

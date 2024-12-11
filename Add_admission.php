@@ -1,5 +1,5 @@
 <?php
-$pdo = require $_SERVER['DOCUMENT_ROOT'].'/db.php';
+$pdo = require $_SERVER['DOCUMENT_ROOT'].'/store1/db.php';
 $products = $pdo->query("select name,id from product")->fetchAll(PDO::FETCH_ASSOC);
 $id = $_GET['id_product']??null;
 
@@ -18,20 +18,20 @@ $id = $_GET['id_product']??null;
     <h1>Добавление информации о поступлении товара</h1>
 
     <?php if($id == null):?>
-        <form action="/handler/Add_admission.php" method="post">
-            <input type="datetime-local" placeholder="Дата и время поставки" name="date_time">
-            <select name="select" id="">
+        <form action="/store1/handler/Add_admission.php" method="post">
+            <input type="text" placeholder="Дата и время поставки" name="date_time" id="date">
+            <select name="select" id="select">
                 <option value=""></option>
                 <?php foreach ($products as $product):?>
                     <option value="<?=$product['id']?>"><?=$product['name']?></option>
                 <?php endforeach;?>
             </select>
-            <input type="text" placeholder="Колличество" name="amount">
-            <input type="submit">
+            <input type="text" placeholder="Колличество" name="amount" id="amount">
+            <input type="submit" id="submit">
         </form>
     <?php else:?>
-        <form action="/handler/Add_admission.php" method="post">
-            <input type="datetime-local" placeholder="Дата и время поставки" name="date_time" id="date">
+        <form action="/store1/handler/Add_admission.php" method="post">
+            <input type="text" placeholder="Дата и время поставки" name="date_time" id="date">
             <input type="hidden" value="<?=$id?>" name="id">
             <input type="text" placeholder="Колличество" name="amount" id="amount">
             <input type="submit" id="btn">

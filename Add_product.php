@@ -13,12 +13,12 @@
 <body>
     <div class="container">
         <h1>Добавление</h1>
-        <form action="/store/store/handler/add_product.php" method="post">
-            <input type="text" placeholder="Название" name="name">
-            <input type="text" placeholder="Цена" name="price">
-            <input type="text" placeholder="Артикул" name="article">
-            <input type="text" placeholder="Колличество" name="amount">
-            <input type="submit">
+        <form action="/store1/handler/add_product.php" method="post">
+            <input type="text" placeholder="Название" name="name" id="name">
+            <input type="text" placeholder="Цена" name="price" id="price">
+            <input type="text" placeholder="Артикул" name="article" id="art">
+            <input type="text" placeholder="Колличество" name="amount" id="amount">
+            <input type="submit" id="btn">
         </form>
     </div>
 </body>
