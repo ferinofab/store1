@@ -2,7 +2,7 @@
 $pdo = require $_SERVER['DOCUMENT_ROOT'].'/store1/db.php';
 ///store
 
-$products = $pdo->query("SELECT DISTINCT product.*  FROM product  JOIN characteristics");
+$products = $pdo->query("SELECT DISTINCT product.*, sum(characteristics.amount) as amount  FROM product   left JOIN characteristics on characteristics.product_id = product.id group by product.name, product.price, product.id, product.article");
 ?>
 <!doctype html>
 <html lang="en">
@@ -83,7 +83,11 @@ $products = $pdo->query("SELECT DISTINCT product.*  FROM product  JOIN character
             <div class="card">
                     <p class="title"><?=$product['name']?></p>
                    <div class="about">
-                       <p>Колличество - <?=$product['ammount_product']?></p>
+                       <?php if($product['amount'] == null):?>
+                            <p>Товара нет</p>
+                       <?php else:?>
+                           <p>Колличество - <?=$product['amount']?></p>
+                       <?php endif;?>
                        <p>Цена - <?=$product['price']?></p>
                        <p>Артикул - <?=$product['article']?></p>
                    </div>
