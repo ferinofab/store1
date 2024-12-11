@@ -2,7 +2,7 @@
 $pdo = require $_SERVER['DOCUMENT_ROOT'].'/store1/db.php';
 ///store
 
-$products = $pdo->query("SELECT DISTINCT product.*, sum(characteristics.amount) as amount  FROM product   left JOIN characteristics on characteristics.product_id = product.id group by product.name, product.price, product.id, product.article");
+$products = $pdo->query("SELECT product.*, sum(characteristics.amount) as amount  FROM product   left JOIN characteristics on characteristics.product_id = product.id group by product.id");
 ?>
 <!doctype html>
 <html lang="en">
